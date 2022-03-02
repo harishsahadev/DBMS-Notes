@@ -1,4 +1,4 @@
-## Features of a Good Relational Design
+# Features of a Good Relational Design
 
 - Reflects real-world structure of the problem 
 - Can represent all expected data over time 
@@ -8,14 +8,14 @@
 - Clean, consistent, and easy to understand
 
 
-## Redundancy
+# Redundancy
 Having multiple copies of same data in the database.
 
 - This problem arises when a database is not normalized
 - It leads to anomalies
 
 
-## Anomaly
+# Anomaly
 Inconsistencies that can arise due to data changes in a database with insertion, deletion, and update
     
 - These problems occur in poorly planned, un-normalised databases where all the data is stored in one table (a flat-file database)
@@ -30,22 +30,22 @@ Inconsistencies that can arise due to data changes in a database with insertion,
 `Normalization ⇒ Good Decomposition ⇒ Minimization of Dependency ⇒ Min Dependency ⇒ Min Redundancy ⇒ Min Anomaly`
 
 
-## Functional Dependencies 
+# Functional Dependencies 
 A functional dependency is a constraint that specifies the relationship between two sets of attributes where one set can accurately determine the value of other sets. 
 It is denoted as X → Y, where X is a set of attributes that is capable of determining the value of Y.
 
-### Armstrong’s Axioms
+## Armstrong’s Axioms
 Given a set of Functional Dependencies F, we can infer new dependencies by the Armstrong’s Axioms: 
 - Reflexivity: if β ⊆ α, then α → β 
 - Augmentation: if α → β, then γα → γβ
 - Transitivity: if α → β and β → γ, then α → γ
     
-### Armstrong’s Axioms: Derived Rules
+## Armstrong’s Axioms: Derived Rules
 - Union: if α → β holds and α → γ holds, then α → βγ holds 
 - Decomposition: if α → βγ holds, then α → β holds and α → γ holds
 - Pseudotransitivity: if α → β holds and γβ → δ holds, then αγ → δ holds
 
-### Closure of Attribute Sets
+## Closure of Attribute Sets
 Given a set of attributes α, define the closure of α under F (denoted by α+) as the set of attributes that are functionally determined by α under F.
 
 Algorithm to compute α+, the closure of α under F:
@@ -57,7 +57,7 @@ Algorithm to compute α+, the closure of α under F:
                 if β ⊆ result then result ← result ∪ γ
             end
 
-#### Example:
+### Example:
 
 R = (A, B, C, G, H, I)
 
@@ -69,7 +69,7 @@ To complute _(AG)+_
 - result = ABCGH (CG → H and CG ⊆ AGBC)
 - **result = ABCGHI** (CG → I and CG ⊆ AGBCH)
 
-#### Uses:
+### Uses:
 
 There are several uses of the attribute closure algorithm:
 - Testing for superkey:
@@ -81,4 +81,31 @@ There are several uses of the attribute closure algorithm:
 - Computing closure of F
     - For each γ ⊆ R, we find the closure γ+, and for each S ⊆ γ+, we output a functional dependency γ → S.
 
+# BCNF: Boyce-Codd Normal Form
 
+A relation schema R is in BCNF with respect to a set F of FDs if for all FDs in F+ of the form
+        
+    α → β, where α ⊆ R and β ⊆ R at least one of the following holds:
+        - α → β is trivial (that is, β ⊆ α) 
+        - α is a superkey for R
+        
+- Example schema not in BCNF: `instr_dept (ID*, name, salary, dept_name*, building, budget)`
+    - because the non-trivial dependency `dept_name → building, budget` holds on `instr_dept`, but `dept_name` is not a superkey
+ 
+Note: * indicates Primary Key
+
+## Decomposition
+
+- If in schema R and a non-trivial dependency α → β causes a violation of BCNF, we decompose R into:
+    - `α ∪ β `
+    - `(R − (β − α))`
+
+- In our example, 
+    - α = dept_name 
+    - β = building, budget 
+    - `dept_name → building, budget`
+- inst_dept is replaced by 
+    - (α ∪ β) = (dept_name, building, budget) 
+        - `dept_name → building, budget`
+    - (R − (β − α)) = (ID, name, salary, dept_name)
+        - `ID → name, salary, dept_name`
