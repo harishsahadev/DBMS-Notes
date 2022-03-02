@@ -29,7 +29,9 @@
 `Normalization ⇒ Good Decomposition ⇒ Minimization of Dependency ⇒ Min Dependency ⇒ Min Redundancy ⇒ Min Anomaly`
 
 
-## Functional Dependencies: 
+## Functional Dependencies 
+    A functional dependency is a constraint that specifies the relationship between two sets of attributes where one set can accurately determine the value of other sets. 
+    It is denoted as X → Y, where X is a set of attributes that is capable of determining the value of Y.
 
 ### Armstrong’s Axioms
 
@@ -44,3 +46,6 @@
     - Decomposition: if α → βγ holds, then α → β holds and α → γ holds
     - Pseudotransitivity: if α → β holds and γβ → δ holds, then αγ → δ holds
 
+### Closure of Attribute Sets
+
+          
