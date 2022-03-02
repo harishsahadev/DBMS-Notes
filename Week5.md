@@ -27,3 +27,20 @@
 `Dependency ⇒ Redundancy ⇒ Anomaly`
 
 `Normalization ⇒ Good Decomposition ⇒ Minimization of Dependency ⇒ Min Dependency ⇒ Min Redundancy ⇒ Min Anomaly`
+
+
+## Functional Dependencies: 
+
+### Armstrong’s Axioms
+
+    Given a set of Functional Dependencies F, we can infer new dependencies by the Armstrong’s Axioms: 
+    - Reflexivity: if β ⊆ α, then α → β 
+    - Augmentation: if α → β, then γα → γβ
+    - Transitivity: if α → β and β → γ, then α → γ
+    
+### Armstrong’s Axioms: Derived Rules
+
+    - Union: if α → β holds and α → γ holds, then α → βγ holds 
+    - Decomposition: if α → βγ holds, then α → β holds and α → γ holds
+    - Pseudotransitivity: if α → β holds and γβ → δ holds, then αγ → δ holds
+
