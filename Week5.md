@@ -22,3 +22,8 @@
   1. **Insertions Anomaly** - When the insertion of a data record is not possible without adding some additional unrelated data to the record
   2. **Deletion Anomaly** - When deletion of a data record results in losing some unrelated information that was stored as part of the record that was deleted from a table
   3. **Update Anomaly** - When a data is changed, which could involve many records having to be changed, leading to the possibility of some changes being made incorrectly
+
+
+`Dependency ⇒ Redundancy ⇒ Anomaly`
+
+`Normalization ⇒ Good Decomposition ⇒ Minimization of Dependency ⇒ Min Dependency ⇒ Min Redundancy ⇒ Min Anomaly`
