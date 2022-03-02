@@ -8,14 +8,14 @@
 
 
 ## Redundancy
-    Having multiple copies of same data in the database.
+Having multiple copies of same data in the database.
 
 - This problem arises when a database is not normalized
 - It leads to anomalies
 
 
 ## Anomaly
-    Inconsistencies that can arise due to data changes in a database with insertion, deletion, and update
+Inconsistencies that can arise due to data changes in a database with insertion, deletion, and update
     
 - These problems occur in poorly planned, un-normalised databases where all the data is stored in one table (a flat-file database)
 - There can be three kinds of anomalies:
@@ -30,21 +30,21 @@
 
 
 ## Functional Dependencies 
-    A functional dependency is a constraint that specifies the relationship between two sets of attributes where one set can accurately determine the value of other sets. 
-    It is denoted as X → Y, where X is a set of attributes that is capable of determining the value of Y.
+A functional dependency is a constraint that specifies the relationship between two sets of attributes where one set can accurately determine the value of other sets. 
+It is denoted as X → Y, where X is a set of attributes that is capable of determining the value of Y.
 
 ### Armstrong’s Axioms
 
-    Given a set of Functional Dependencies F, we can infer new dependencies by the Armstrong’s Axioms: 
-    - Reflexivity: if β ⊆ α, then α → β 
-    - Augmentation: if α → β, then γα → γβ
-    - Transitivity: if α → β and β → γ, then α → γ
+Given a set of Functional Dependencies F, we can infer new dependencies by the Armstrong’s Axioms: 
+- Reflexivity: if β ⊆ α, then α → β 
+- Augmentation: if α → β, then γα → γβ
+- Transitivity: if α → β and β → γ, then α → γ
     
 ### Armstrong’s Axioms: Derived Rules
 
-    - Union: if α → β holds and α → γ holds, then α → βγ holds 
-    - Decomposition: if α → βγ holds, then α → β holds and α → γ holds
-    - Pseudotransitivity: if α → β holds and γβ → δ holds, then αγ → δ holds
+- Union: if α → β holds and α → γ holds, then α → βγ holds 
+- Decomposition: if α → βγ holds, then α → β holds and α → γ holds
+- Pseudotransitivity: if α → β holds and γβ → δ holds, then αγ → δ holds
 
 ### Closure of Attribute Sets
 
