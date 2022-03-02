@@ -7,4 +7,17 @@
 
 
 ## Redundancy
-  having multiple copies of same data in the database.
+    Having multiple copies of same data in the database.
+
+- This problem arises when a database is not normalized
+- It leads to anomalies
+
+
+## Anomaly
+    Inconsistencies that can arise due to data changes in a database with insertion, deletion, and update
+    
+- These problems occur in poorly planned, un-normalised databases where all the data is stored in one table (a flat-file database)
+- There can be three kinds of anomalies
+  1. Insertions Anomaly
+  2. Deletion Anomaly
+  3. Update Anomaly
