@@ -19,9 +19,9 @@
     
 - These problems occur in poorly planned, un-normalised databases where all the data is stored in one table (a flat-file database)
 - There can be three kinds of anomalies:
-  1. **Insertions Anomaly** - When the insertion of a data record is not possible without adding some additional unrelated data to the record
-  2. **Deletion Anomaly** - When deletion of a data record results in losing some unrelated information that was stored as part of the record that was deleted from a table
-  3. **Update Anomaly** - When a data is changed, which could involve many records having to be changed, leading to the possibility of some changes being made incorrectly
+  1. **_Insertion Anomaly_** - When the insertion of a data record is not possible without adding some additional unrelated data to the record
+  2. **_Deletion Anomaly_** - When deletion of a data record results in losing some unrelated information that was stored as part of the record that was deleted from a table
+  3. **_Update Anomaly_** - When a data is changed, which could involve many records having to be changed, leading to the possibility of some changes being made incorrectly
 
 
 `Dependency ⇒ Redundancy ⇒ Anomaly`
