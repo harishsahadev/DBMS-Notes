@@ -94,7 +94,7 @@ A relation schema R is in BCNF with respect to a set F of FDs if for all FDs in 
  
 Note: * indicates Primary Key
 
-## Decomposition
+# Decomposition
 
 - The process of breaking up or dividing a single relation into two or more sub-relation is called *Decomposition of a relation*.
 - A decomposition of a relation schema R consists of replacing the realtion schema by two (or more) relation schemas such that each contain a subset of attributes of R and together they include all atributes of R.
@@ -115,17 +115,17 @@ Note: * indicates Primary Key
     - Lossy Decomposition
     - Lossy Decomposition
 
-### Lossy Decomposition
+## Lossy Decomposition
 
 - The join of the sub-relations does not result in the same relation R that was decomposed
 - The natural join of the sub-relations is always found to have extraneous tuples
 
-### Lossless Decomposition
+## Lossless Decomposition
 
 - No information is lost from the original relation during decomposition
 - When the sub relation are joined back, the same realtion is obtained that was decomposed
 - *Every decompostion must always be Lossless*
 - For a decomposition to be Lossless, it must satisfy the following conditions: 
     - R1 ∪ R2 = R 
-    - R1 ∩ R2 = φ 
+    - R1 ∩ R2 != φ 
     - R1 ∩ R2 → R1 or R1 ∩ R2 → R2
