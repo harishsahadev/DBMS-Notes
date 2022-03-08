@@ -115,12 +115,12 @@ Note: * indicates Primary Key
     - Lossy Decomposition
     - Lossy Decomposition
 
-# Lossy Decomposition
+### Lossy Decomposition
 
 - The join of the sub-relations does not result in the same relation R that was decomposed
 - The natural join of the sub-relations is always found to have extraneous tuples
 
-# Lossless Decomposition
+### Lossless Decomposition
 
 - No information is lost from the original relation during decomposition
 - When the sub relation are joined back, the same realtion is obtained that was decomposed
