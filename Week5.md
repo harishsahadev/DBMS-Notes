@@ -127,5 +127,18 @@ Note: * indicates Primary Key
 - *Every decompostion must always be Lossless*
 - For a decomposition to be Lossless, it must satisfy the following conditions: 
     - R1 ∪ R2 = R 
-    - R1 ∩ R2 != φ 
+    - R1 ∩ R2 != φ (null)
     - R1 ∩ R2 → R1 or R1 ∩ R2 → R2
+
+# 3NF: Third Normal Form
+
+- A relation schema R is in third normal form (3NF) if for all: 
+
+        α → β ∈ F+
+
+- at least one of the following holds:
+    - α → β is trivial (that is, β ⊆ α) 
+    - α is a superkey for R 
+    - Each attribute A in β − α is contained in a candidate key for R (Note: Each attribute may be in a different candidate key)
+
+- If a relation is in BCNF it is in 3NF (since in BCNF one of the first two conditions above must hold)
