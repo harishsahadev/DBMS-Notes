@@ -96,6 +96,8 @@ Note: * indicates Primary Key
 
 ## Decomposition
 
+- The process of breaking up or dividing a single relation into two or more sub-relation is called *Decomposition of a relation*.
+- A decomposition of a relation schema R consists of replacing the realtion schema by two (or more) relation schemas such that each contain a subset of attributes of R and together they include all atributes of R.
 - If in schema R and a non-trivial dependency α → β causes a violation of BCNF, we decompose R into:
     - `α ∪ β `
     - `(R − (β − α))`
@@ -109,3 +111,21 @@ Note: * indicates Primary Key
         - `dept_name → building, budget`
     - (R − (β − α)) = (ID, name, salary, dept_name)
         - `ID → name, salary, dept_name`
+- **Two types of Decomposition**
+    - Lossy Decomposition
+    - Lossy Decomposition
+
+# Lossy Decomposition
+
+- The join of the sub-relations does not result in the same relation R that was decomposed
+- The natural join of the sub-relations is always found to have extraneous tuples
+
+# Lossless Decomposition
+
+- No information is lost from the original relation during decomposition
+- When the sub relation are joined back, the same realtion is obtained that was decomposed
+- *Every decompostion must always be Lossless*
+- For a decomposition to be Lossless, it must satisfy the following conditions: 
+    - R1 ∪ R2 = R 
+    - R1 ∩ R2 = φ 
+    - R1 ∩ R2 → R1 or R1 ∩ R2 → R2
