@@ -38,3 +38,19 @@ Let R be a relational Schema and X, Y, A be the attribute sets over R where X : 
 - A: Non Prime Attribute
 
 A *prime attribute* of a relation is an attribute that is a part of a candidate key of the relation
+
+## 3NF: Third Normal Form
+- A relational schema R is in 3NF if for every FD X → A associated with R either
+    - A ⊆ X (that is, the FD is trivial) or 
+    - X is a superkey of R or
+    - A is part of some candidate key (not just superkey!)
+
+- A relation in 3NF is naturally in 2NF and should not have a transitive dependency.
+
+### Transitive Dependency
+- A **transitive dependency** is a functional dependency which holds by virtue of transitivity. A transitive dependency can occur only in a relation that has three or more attributes.
+- Let A, B, and C designate three distinct attributes (or distinct collections of attributes) in the relation. Suppose all three of the following conditions hold: 
+    - A → B 
+    - It is not the case that B → A (Does not hold)
+    - B → C
+- Then the functional dependency A → C (which follows from 1 and 3 by the axiom of transitivity) is a transitive dependency 
