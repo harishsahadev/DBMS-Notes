@@ -54,3 +54,23 @@ A *prime attribute* of a relation is an attribute that is a part of a candidate 
     - It is not the case that B → A (Does not hold)
     - B → C
 - Then the functional dependency A → C (which follows from 1 and 3 by the axiom of transitivity) is a transitive dependency 
+
+# Comparison of BCNF and 3NF
+- It is always possible to decompose a relation into a set of relations that are in *3NF* such that: 
+    - the decomposition is lossless
+    - the dependencies are preserved
+
+- It is always possible to decompose a relation into a set of relations that are in *BCNF* such that:
+    - the decomposition is lossless 
+    - it may not be possible to preserve dependencies
+
+| S# | 3NF | BCNF |
+| --- | --- | --- |
+| 1. | It concentrates on Primary Key | It concentrates on Candidate Key |
+| 2. | Redundancy is high as compared to BCNF | 0% redundancy |
+| 3. | It preserves all the dependencies | It may not preserve the dependencies |
+| 4. | A dependency X → Y is allowed in 3NF if X is a super key or Y is a part of some key | A dependency X → Y is allowed if X is a super key |
+
+
+
+
