@@ -81,4 +81,8 @@ Let R be a relation schema and let α ⊆ R and β ⊆ R. The multivalued depend
     t4 [β] = t2[β]
     t4[R – β] = t1[R – β]
 
+- We use multivalued dependencies in two ways: 
+    - To test relations to determine whether they are legal under a given set of functional and multivalued dependencies
+    - To specify constraints on the set of legal relations. We shall thus concern ourselves only with relations that satisfy a given set of functional and multivalued dependencies.
+- If a relation r fails to satisfy a given multivalued dependency, we can construct a relations r’ that does satisfy the multivalued dependency by adding tuples to r.
 
