@@ -86,3 +86,14 @@ Let R be a relation schema and let α ⊆ R and β ⊆ R. The multivalued depend
     - To specify constraints on the set of legal relations. We shall thus concern ourselves only with relations that satisfy a given set of functional and multivalued dependencies.
 - If a relation r fails to satisfy a given multivalued dependency, we can construct a relations r’ that does satisfy the multivalued dependency by adding tuples to r.
 
+|   | Name | Rule |
+| --- | --- | --- |
+| C- | Complementation | If X :fast_forward: Y, then X :fast_forward: (R − (X ∪ Y)) |
+| A- | Augmentation | If X :fast_forward: Y and W ⊇ Z, then WX :fast_forward: YZ |
+| T- | Transitivity | If X :fast_forward: Y and Y :fast_forward: Z, then X :fast_forward: (Z − Y) |
+|  | Replication | If X → Y, then X :fast_forward: Y but the reverse is not true |
+|  | Coalescence | If X :fast_forward: Y and there is a W such that W ∩ Y is empty, W→ Z and Y ⊇ Z, then X → Z |
+
+- A MVD **X :fast_forward: Y** in **R** is called a trivial MVD if
+    - **Y** is a subset of **X (X ⊇ Y)** or 
+    - **X ∪ Y = R**. Otherwise, it is a non trivial MVD and we have to repeat values redundantly in the tuples.
