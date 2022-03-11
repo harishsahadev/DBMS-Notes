@@ -97,3 +97,58 @@ Let R be a relation schema and let α ⊆ R and β ⊆ R. The multivalued depend
 - A MVD **X :fast_forward: Y** in **R** is called a trivial MVD if
     - **Y** is a subset of **X (X ⊇ Y)** or 
     - **X ∪ Y = R**. Otherwise, it is a non trivial MVD and we have to repeat values redundantly in the tuples.
+
+
+# Temporal Databases
+
+- Some data may be inherently historical because they include time-dependent / time-varying data, such as:
+    - Medical Records 
+    - Judicial records 
+    - Share prices 
+    - Exchange rates, etc.
+
+- The desire to model such data means that we need to store not only the respective value but also an associated date or a time period for which the value is valid.
+- Temporal databases provide a uniform and systematic way of dealing with historical data
+
+## Temporal Data
+- *Temporal data* have an association time interval during which the data are valid.
+- A *snapshot* is the value of the data at a particular point in time
+
+## Temporal Database Theory
+
+- **Model of Temporal Domain**: Single-dimensional linearly ordered which may be 
+    - Discrete or dense 
+    - Bounded or unbounded 
+    - Single dimensional or multi-dimensional
+    - Linear or non-linear
+
+- Timestamp Model 
+- Temporal ER model by adding valid time to 
+    - Attributes: address of an instructor at different points in time 
+    - Entities: time duration when a student entity exists 
+    - Relationships: time during which a student attended a course 
+    - But no accepted standard
+- Temporal Functional Dependency Theory 
+- Temporal Logic 
+- Temporal Query Languge: TQuel [1987], TSQL2 [1995], SQL/Temporal [1996], SQL/TP [1997]
+
+## Modeling Temporal Data: Uni / Bi Temporal
+- There are two different aspects of time in temporal databases
+    - **Valid Time**: Time period during which a fact is true in real world, provided to the system.
+    - **Transaction Time**: Time period during which a fact is stored in the database, based on transaction serialization order and is the timestamp generated automatically by the system.
+ 
+ - Temporal Relation is one where each tuple has associated time; either valid time or transaction time or both associated with it. 
+    - **Uni-Temporal Relations**: Has one axis of time, either Valid Time or Transaction Time.
+    - **Bi-Temporal Relations**: Has both axis of time – Valid time and Transaction time. It includes Valid Start Time, Valid End Time, Transaction Start Time, Transaction
+End Time.
+
+## Modeling Temporal Data: Summary
+- Advantages:
+    - The main advantages of this bi-temporal relations is that it provides historical and roll back information. 
+        - Historical Information – Valid Time.
+        - Rollback Information – Transaction Time.
+
+- Disadvantages:
+    - More storage 
+    - Complex query processing
+    - Complex maintenance including backup and recovery
