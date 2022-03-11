@@ -71,6 +71,14 @@ A *prime attribute* of a relation is an attribute that is a part of a candidate 
 | 3. | It preserves all the dependencies | It may not preserve the dependencies |
 | 4. | A dependency X → Y is allowed in 3NF if X is a super key or Y is a part of some key | A dependency X → Y is allowed if X is a super key |
 
+# MVD: Multivalued Dependency
 
+Let R be a relation schema and let α ⊆ R and β ⊆ R. The multivalued dependency **α :fast_forward: β** holds on R if in any legal relation r(R), for all pairs for tuples t1 and t2 in r such that t1[α] = t2 [α], there exist tuples t3 and t4 in r such that:
+
+    t1[α] = t2 [α] = t3 [α] = t4 [α] 
+    t3[β] = t1 [β]
+    t3[R – β] = t2[R – β]
+    t4 [β] = t2[β]
+    t4[R – β] = t1[R – β]
 
 
